@@ -79,7 +79,7 @@
 			top: -100px;
 			width: 100%;
 			height: 100px;
-			background-image: url("wave.png");
+			background-image: url("/wave.png");
 		}
 	}
 	.wave-1 {
