@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-:root {
-	--color-muted-gold: #947a55;
-}
-
 @theme {
 	--color-muted-gold: #947a55;
+	--color-wood: #C0B2A2;
+	--color-muted-wood: #DFD9D2;
+	--color-stone: #585858;
 	--font-title: "Old Standard TT", serif;
+	--font-body: "Albert Sans", sans-serif;
 }
 
 body {
 	font-family: "Albert Sans", sans-serif;
 	font-weight: 300;
 	font-size: 24px;
-	@apply bg-cyan-300 tracking-tight;
+	@apply bg-muted-wood tracking-tight;
 }
 
 button {
@@ -36,5 +36,11 @@ button {
 .main-section {
 	background:
 		url("grid.png") 64px 64px fixed,
-		radial-gradient(circle at center left, #b3804d, #ccaa88);
+		radial-gradient(circle at center left, var(--color-muted-gold), var(--color-wood));
+}
+
+.sub-section {
+	background:
+		url("grid.png") 64px 64px fixed,
+		radial-gradient(circle at center left, var(--color-stone-500), var(--color-stone));
 }

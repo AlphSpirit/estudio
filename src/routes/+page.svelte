@@ -1,6 +1,17 @@
+<script lang="ts">
+	function scrollToSection(index: number) {
+		window.scrollTo({
+			top: window.innerHeight * (index - 1),
+			behavior: "smooth",
+		});
+	}
+</script>
+
 <div class="wave wave-1"></div>
 <div class="wave wave-2"></div>
 <div class="wave wave-3"></div>
+
+<!-- Section 1 - Landing -->
 <div class="h-screen flex">
 	<div class="w-1/2 h-full main-section">
 		<div
@@ -11,7 +22,7 @@
 					Résidence contemporaine
 				</div>
 				<div class="text-[6rem] font-black font-title tracking-tighter">
-					S. Studio
+					<span class="font-body">E</span> Studio
 				</div>
 			</div>
 			<div class="separator-after">
@@ -23,7 +34,10 @@
 			<div class="mb-12">
 				Conçu par Vincent Gignac, professeur d'architecture
 			</div>
-			<button class="flex items-center gap-2">
+			<button
+				class="flex items-center gap-2"
+				onclick={() => scrollToSection(2)}
+			>
 				En savoir plus
 				<img src="arrow-right.png" alt="" />
 			</button>
@@ -31,20 +45,79 @@
 	</div>
 	<div class="w-1/2 p-16 z-1 flex items-center justify-center">
 		<div
-			class="hover-zoom relative border-12 border-white/35 backdrop-blur-sm rounded-4xl overflow-hidden shadow-[0_6px_18px_#00000088]"
+			class="hover-zoom relative border-12 border-muted-wood/35 backdrop-blur-sm rounded-4xl overflow-hidden shadow-[0_6px_18px_#00000088]"
 		>
 			<div class="overlay"></div>
 			<img src="building.png" alt="" />
 		</div>
 	</div>
 </div>
+
+<!-- Section 2 - Slogan -->
 <div class="h-screen flex">
 	<div class="grow"></div>
-	<div class="w-1/2 h-full bg-taupe-700">
+	<div class="w-1/2 h-full sub-section">
 		<div
 			class="w-full h-full backdrop-blur-sm z-1 flex items-center justify-center gap-12 flex-col text-center"
 		>
-			<div class="text-8xl z-1">Test</div>
+			<div>
+				<div class="text-lg -mb-4 italic opacity-50">
+					Étudier, Habiter, Réussir
+				</div>
+				<div class="text-[6rem] font-black font-title tracking-tighter">
+					Notre mandat
+				</div>
+			</div>
+			<button
+				class="flex items-center gap-2"
+				onclick={() => scrollToSection(3)}
+			>
+				En voir plus
+				<img src="arrow-right.png" alt="" />
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- Section 3 - Carousel -->
+<div class="h-screen flex">
+	<div class="w-1/2 h-full main-section">
+		<div
+			class="w-full h-full backdrop-blur-sm z-1 pt-4 flex items-center justify-center gap-16 flex-col text-center"
+		>
+			<div>
+				<div class="text-lg -mb-4 italic opacity-50">En photos</div>
+				<div class="text-[6rem] font-black font-title tracking-tighter">
+					De toute beauté
+				</div>
+			</div>
+			<button
+				class="flex items-center gap-2"
+				onclick={() => scrollToSection(4)}
+			>
+				Nous contacter
+				<img src="arrow-right.png" alt="" />
+			</button>
+		</div>
+	</div>
+	<div class="grow"></div>
+</div>
+
+<!-- Section 4 - Contact -->
+<div class="h-screen flex">
+	<div class="grow"></div>
+	<div class="w-1/2 h-full sub-section">
+		<div
+			class="w-full h-full backdrop-blur-sm z-1 flex items-center justify-center gap-12 flex-col text-center"
+		>
+			<div>
+				<div class="text-lg -mb-4 italic opacity-50">
+					Informations de contact
+				</div>
+				<div class="text-[6rem] font-black font-title tracking-tighter">
+					Rejoignez nous
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -70,8 +143,8 @@
 		width: 100%;
 		position: fixed;
 		bottom: 0;
-		background-color: white;
-		opacity: 0.3;
+		background-color: black;
+		opacity: 0.06;
 		pointer-events: none;
 		&::before {
 			content: "";
@@ -85,13 +158,13 @@
 	.wave-1 {
 		height: calc(75% - 50px);
 		&::before {
-			animation: wave1 50s linear infinite;
+			animation: wave1 60s linear infinite;
 		}
 	}
 	.wave-2 {
 		height: calc(50% - 50px);
 		&::before {
-			animation: wave2 40s linear infinite;
+			animation: wave2 45s linear infinite;
 		}
 	}
 	.wave-3 {
@@ -110,7 +183,7 @@
 			transform: translateX(-50%);
 			width: 6rem;
 			height: 1px;
-			background-color: var(--color-muted-gold);
+			background-color: var(--color-wood);
 		}
 	}
 	.overlay {
