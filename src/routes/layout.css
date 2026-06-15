@@ -19,7 +19,7 @@ body {
 button {
 	@apply text-white px-18 py-6 shadow-[0_4px_16px_#00000066] font-bold cursor-pointer transition-transform duration-300 ease-in-out rounded-lg;
 	background:
-		url("wood.png") 0 420px,
+		url("/wood.png") 0 420px,
 		radial-gradient(circle at 20% 20px, #ab916d, var(--color-muted-gold));
 	&:hover {
 		@apply scale-105;
