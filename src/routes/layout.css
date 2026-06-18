@@ -2,8 +2,8 @@
 
 @theme {
 	--color-muted-gold: #947a55;
-	--color-wood: #C0B2A2;
-	--color-muted-wood: #DFD9D2;
+	--color-wood: #c0b2a2;
+	--color-muted-wood: #dfd9d2;
 	--color-stone: #585858;
 	--font-title: "Old Standard TT", serif;
 	--font-body: "Albert Sans", sans-serif;
@@ -14,6 +14,9 @@ body {
 	font-weight: 300;
 	font-size: 24px;
 	@apply bg-muted-wood tracking-tight;
+}
+b {
+	font-weight: 600;
 }
 
 button {
@@ -35,12 +38,36 @@ button {
 
 .main-section {
 	background:
-		url("grid.png") 64px 64px fixed,
-		radial-gradient(circle at center left, var(--color-muted-gold), var(--color-wood));
+		url("/grid.png") 64px 64px fixed,
+		radial-gradient(
+			circle at center left,
+			var(--color-muted-gold),
+			var(--color-wood)
+		);
 }
 
 .sub-section {
 	background:
-		url("grid.png") 64px 64px fixed,
-		radial-gradient(circle at center left, var(--color-stone-500), var(--color-stone));
+		url("/grid.png") 64px 64px fixed,
+		radial-gradient(
+			circle at center left,
+			var(--color-stone-500),
+			var(--color-stone)
+		);
+}
+
+ul li {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+hr {
+	width: 6rem;
+	height: 1px;
+	background-color: var(--color-wood);
+	border: none;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 2rem 0;
 }
